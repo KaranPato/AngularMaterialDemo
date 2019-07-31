@@ -1,0 +1,21 @@
+
+  .mat-form-field {
+    width: 100%;
+  }
+  mat-card{
+    max-width: 800px;
+    max-height: 600px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+  mat-card-header{
+    justify-content: center;
+  }
+  .example-card{
+    margin-top: 80px;
+    background-image: url('../../../assets/1.jpeg');
+  }
