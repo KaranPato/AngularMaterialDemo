@@ -1,8 +1,6 @@
 <div>
-  <div class="container">
-    <mat-progress-bar [mode]="'indeterminate'" *ngIf="isLoading">
-    </mat-progress-bar>
-  </div>
+  <mat-progress-bar [mode]="'indeterminate'" *ngIf="isLoading">
+  </mat-progress-bar>
 
   <div class="container text-center">
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
@@ -13,15 +11,23 @@
         <mat-card-content>
           <div class="example-container">
             <mat-form-field>
-              <input class="form-control" matInput placeholder="Recipe Name" name="recepiName" formControlName="recepiName">
+              <input class="form-control" matInput placeholder="Recipe Name" name="recepiName"
+                formControlName="recepiName">
               <mat-error *ngIf="employeeForm.controls['recepiName'].invalid && submitted">
+                Recepi name is required.
+              </mat-error>
+              <mat-error *ngIf="employeeForm.controls['recepiName'].invalid && !submitted">
                 Recepi name is required.
               </mat-error>
             </mat-form-field>
 
             <mat-form-field>
-              <textarea class="form-control" matInput placeholder="Description" name="recepiDesc" formControlName="recepiDesc"></textarea>
+              <textarea class="form-control" matInput placeholder="Description" name="recepiDesc"
+                formControlName="recepiDesc"></textarea>
               <mat-error *ngIf="employeeForm.controls['recepiDesc'].invalid && submitted">
+                Please describe your recepi.
+              </mat-error>
+              <mat-error *ngIf="employeeForm.controls['recepiDesc'].invalid && !submitted">
                 Please describe your recepi.
               </mat-error>
             </mat-form-field>

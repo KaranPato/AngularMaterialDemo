@@ -17,11 +17,7 @@ export class AddUpdateRecepiComponent implements OnInit {
   submitted: boolean = false;
   model: any;
   isLoading: boolean = false;
-  files: any;
-  input = new FormData();
   recepiId: number;
-  updateRecepi = "Update Recepi";
-  addRecepi = "Add Recepi";
 
   constructor(private mainService: MainService,
     private fb: FormBuilder,
@@ -53,7 +49,6 @@ export class AddUpdateRecepiComponent implements OnInit {
 
     this.mainService.GetRecipes().subscribe((data: any) => {
       this.dataSource = data.content;
-      console.log(this.dataSource);
     },
       (err: HttpErrorResponse) => {
         console.log(err);
@@ -84,12 +79,15 @@ export class AddUpdateRecepiComponent implements OnInit {
       }
     }
 
-    this.mainService.AddRecepi(this.model).subscribe((data: any) => {
+    this.mainService.AddRecepi(this.model).subscribe(() => {
       this.isAdd = false;
       this.isLoading = false;
       this.router.navigate(["/recepi-list"]);
       this.GetRecipes();
-    })
+    }, (err: HttpErrorResponse) => {
+      this.isLoading = false;
+      alert(err.statusText);
+    });
   }
 
 }

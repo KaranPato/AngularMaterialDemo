@@ -2,10 +2,6 @@
   .mat-form-field {
     width: 100%;
   }
-  mat-card{
-    max-width: 800px;
-    max-height: 600px;
-  }
 
   mat-card-title,
   mat-card-content {
@@ -16,6 +12,6 @@
     justify-content: center;
   }
   .example-card{
-    margin-top: 80px;
+    margin: 50px 20% 0px 20%;
     background-image: url('../../../assets/1.jpeg');
   }
