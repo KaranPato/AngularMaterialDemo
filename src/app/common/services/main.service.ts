@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '../../../../node_modules/@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 

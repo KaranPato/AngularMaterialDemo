@@ -3,7 +3,7 @@
     <button *ngIf="!isAdd" mat-raised-button color="primary" class="btn-right mt-2" [routerLink]="['/add-update-recepi', 0]">Add Recipe</button>
   </div>
   <div class="container">
-    <mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="500px">
       <mat-grid-tile *ngFor="let data of dataSource">
         <div class="container">
           <mat-card class="example-card">

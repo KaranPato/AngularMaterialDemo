@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { MainService } from 'src/app/common/services/main.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-update-recepi',
