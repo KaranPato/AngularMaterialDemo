@@ -1,27 +1,42 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '../../../../node_modules/@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+
+var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
-
-  baseUrl = 'http://localhost:52100/api/Recepi/';
+  recepiUrl = 'http://localhost:52100/api/Recepi/';
+  userUrl = 'http://localhost:52100/api/User/';
 
   constructor(private http: HttpClient) { }
 
   GetRecipes() {
-    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.get(this.baseUrl + "GetRecepies", { headers: reqHeader });
+    return this.http.get(this.recepiUrl + "GetRecepies", { headers: reqHeader });
+  }
+
+  GetRecipeById(Id) {
+    return this.http.post(this.recepiUrl + "GetRecepiById", Id, { headers: reqHeader })
   }
 
   AddRecepi(model) {
-    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.baseUrl + "AddRecepi", model, { headers: reqHeader });
+    return this.http.post(this.recepiUrl + "AddRecepi", model, { headers: reqHeader });
   }
 
   DeleteRecepi(Id) {
-    var reqHeader = new HttpHeaders({ 'Content-Type': 'aplication/json' });
-    return this.http.delete(this.baseUrl + "/" + Id, { headers: reqHeader });
+    return this.http.delete(this.recepiUrl + "/" + Id, { headers: reqHeader });
+  }
+
+  Login(data: any) {
+    return this.http.post(this.userUrl + '/login', data, { headers: reqHeader }).pipe()
+  }
+
+  Register(data: any) {
+    return this.http.post(this.userUrl + '/register', data, { headers: reqHeader }).pipe()
+  }
+
+  GetAllUsers() {
+    return this.http.get(this.userUrl + '/getAllUsers', { headers: reqHeader }).pipe();
   }
 }

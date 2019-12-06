@@ -1,0 +1,55 @@
+<div>
+  <button mat-raised-button color="primary" class="btn-right" [routerLink]="['/layout/recepi-list']">Back</button>
+</div>
+
+<div>
+  <mat-progress-bar [mode]="'indeterminate'" *ngIf="isLoading">
+  </mat-progress-bar>
+
+  <div class="container text-center">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <h3>{{isAdd == true ? 'Add Recepi' : 'Update Recepi'}}</h3>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="example-container">
+            <mat-form-field>
+              <input class="form-control" matInput placeholder="Recipe Name" name="recepiName"
+                formControlName="recepiName">
+              <mat-error *ngIf="employeeForm.controls['recepiName'].invalid && submitted">
+                Recepi name is required.
+              </mat-error>
+              <mat-error *ngIf="employeeForm.controls['recepiName'].invalid && !submitted">
+                Recepi name is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <textarea class="form-control" matInput placeholder="Description" name="recepiDesc"
+                formControlName="recepiDesc"></textarea>
+              <mat-error *ngIf="employeeForm.controls['recepiDesc'].invalid && submitted">
+                Please describe your recepi.
+              </mat-error>
+              <mat-error *ngIf="employeeForm.controls['recepiDesc'].invalid && !submitted">
+                Please describe your recepi.
+              </mat-error>
+            </mat-form-field>
+
+            <!-- <img [src]="files" alt="">
+            <button mat-raised-button type="button" color="primary" (click)="fileInput.click()">Upload Recepi Image</button>
+            <input hidden type="file" #fileInput (change)="recepiImageUpload($event.target.files)"> -->
+
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button type="submit" color="accent">
+            {{isAdd == true ? 'Add Recepi' : 'Update Recepi'}}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+
+  </div>
+
+</div>

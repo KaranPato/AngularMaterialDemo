@@ -1,0 +1,17 @@
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+  mat-card-header{
+    justify-content: center;
+  }
+  .example-card{
+    margin: 50px 20% 0px 20%;
+    background-image: url('../../../assets/1.jpeg');
+  }

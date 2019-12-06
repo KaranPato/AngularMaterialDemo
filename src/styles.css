@@ -1,3 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+@font-face {
+    font-family: 'proximanova-light';
+    src:url(assets/fonts/proximanova-light-webfont.woff2) format('woff2')
+}
+.btn-right{
+    float: right;
+}
+.form{
+    margin-top: 350px;
+}
+.login-form{
+    padding: 5px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a [routerLink]="['/layout/recepi-list']">Recepi</a>
+    <span class="example-spacer" color="primary"></span>
+    <button class="mat-button mat-button-base mat-menu-trigger" mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/login']">Logout</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

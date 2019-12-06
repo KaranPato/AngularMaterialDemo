@@ -1,0 +1,28 @@
+.mat-toolbar{
+    background-color: grey;
+    color: black;
+}
+.mat-toolbar .mat-toolbar-row a{
+color: darkblue;
+}
+.userEllipse {
+    min-width: 30px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 20px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    left: auto !important;
+  right: 0px !important;
+  top: 100% !important;
+  transform: translateY(0px) !important;
+  bottom: auto !important;
+  }
+  @media (max-width: 640px) {
+    .dropdown-menu {
+      right: 0 !important;
+      left: auto !important;
+    }
+  }

@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModuleModule } from './common/custom-material-module/custom-material-module.module';
-import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { EmployeeComponent } from './components/employee/employee.component';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/Layout Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,132 @@
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <!-- <h2 class="text-center">Login Now</h2> -->
+        <mat-tab-group>
+          <mat-tab label="Login">
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" type="text" formControlName="username">
+              </mat-form-field>
+              <div *ngIf="submitted && l.username.errors" class="alert alert-danger">
+                <div *ngIf="l.username.errors.required">Username is required</div>
+              </div>
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" type="password" formControlName="password">
+              </mat-form-field>
+              <div *ngIf="submitted && l.password.errors" class="alert alert-danger">
+                <div *ngIf="l.password.errors.required">Password is required</div>
+              </div>
+
+              <div class="form-check">
+                <mat-checkbox>Remember Me!</mat-checkbox>
+                <button mat-raised-button color="primary" class="float-right" type="submit">Login</button>
+              </div>
+
+            </form>
+          </mat-tab>
+          <mat-tab label="Register">
+            <form class="login-form" [formGroup]="registerForm" (ngSubmit)="register()">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Firstname" type="text" formControlName="firstName">
+              </mat-form-field>
+              <div *ngIf="submittedR && r.firstName.errors" class="alert alert-danger">
+                <div *ngIf="r.firstName.errors.required">Firstname is required</div>
+              </div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Lastname" type="text" formControlName="lastName">
+              </mat-form-field>
+              <div *ngIf="submittedR && r.lastName.errors" class="alert alert-danger">
+                <div *ngIf="r.lastName.errors.required">Lastname is required</div>
+              </div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" type="email" formControlName="email">
+              </mat-form-field>
+              <div *ngIf="submittedR && r.email.errors" class="alert alert-danger">
+                <div *ngIf="r.email.errors.required">Email is required</div>
+                <div *ngIf="r.email.errors.email">Not a valid email format.</div>
+              </div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="+91 123 456 7890" (keypress)="keypressDigit($event)" type="text"
+                  formControlName="phoneNo" minLength="10" maxlength="13">
+              </mat-form-field>
+              <div *ngIf="submittedR && r.phoneNo.errors" class="alert alert-danger">
+                <div *ngIf="r.phoneNo.errors.required">Phone No is required</div>
+              </div>
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" type="password" formControlName="password">
+              </mat-form-field>
+              <div *ngIf="submittedR && r.password.errors" class="alert alert-danger">
+                <div *ngIf="r.password.errors.required">Password is required</div>
+              </div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Confirm Password" type="password" formControlName="confirmPassword">
+                <div *ngIf="registerForm.hasError('notSame')" class="alert alert-danger mt-2">
+                  Passwords do not match
+                </div>
+              </mat-form-field>
+
+              <div class="form-check">
+                <mat-checkbox>Remember Me!</mat-checkbox>
+                <button mat-raised-button color="primary" class="float-right" type="submit">Register</button>
+              </div>
+
+            </form>
+          </mat-tab>
+        </mat-tab-group>
+        <div class="copy-text">Created with <i class="fa fa-heart"></i> by Karano</div>
+      </div>
+      <div class="col-md-8 banner-sec">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg"
+                alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>This is Heaven</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg"
+                alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>This is Heaven</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg"
+                alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>This is Heaven</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
