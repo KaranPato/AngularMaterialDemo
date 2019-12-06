@@ -9,8 +9,11 @@ var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 export class MainService {
   recepiUrl = 'http://localhost:52100/api/Recepi/';
   userUrl = 'http://localhost:52100/api/User/';
+  baseUrl = 'http://localhost:52100/api/Recepi/';
 
   constructor(private http: HttpClient) { }
+
+
 
   GetRecipes() {
     return this.http.get(this.recepiUrl + "GetRecepies", { headers: reqHeader });
